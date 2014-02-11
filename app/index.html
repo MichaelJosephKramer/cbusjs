@@ -16,6 +16,29 @@
   <!-- build:js scripts/vendor/modernizr.js -->
   <script src="bower_components/modernizr/modernizr.js"></script>
   <!-- endbuild -->
+
+  <script type="text/template" id="search">
+    <div class="col-lg-9">
+      <input type="text" class="input-lg form-control country-name" placeholder="Search for a Country...">
+    </div>
+    <div class="col-lg-3">
+      <button class="btn btn-primary country-search-button">Search</button>
+    </div>
+  </script>
+
+  <script type="text/template" id="country">
+    <div class="country-card" data-id="<%= alpha2Code %>">
+      <span class="code"><span><%= alpha3Code %></span></span>
+      <span class="details">
+        <span class="name"><%= name %></span>
+        <span>Currency: <%= currency %></span>
+        <span>Population: <%= population %></span>
+        <span>Languages: <%= languages %></span>
+      </span>
+      <span class="map-it-button"><button class="btn btn-xs btn-info map-it" data-id="<%= alpha2Code %>">Map It</button></span>
+    </div>
+  </script>
+
 </head>
 <body>
   <!--[if lt IE 10]>
@@ -40,21 +63,18 @@
             <button class="btn btn-primary country-search-button">Search</button>
           </div>
         </div>
+        <div class="row marketing">
+          <div class="col-sm-12">
+            <div id="list-of-countries"></div>
+          </div>
+        </div>
       </div>
 
-      <div class="col-sm-6" style="text-align:center" >
-        <img src="images/zombie-paul-morphy.jpg" />
-      </div>
-    </div>
-
-    <div class="row marketing">
-      <div class="col-sm-6">
-        <div id="list-of-countries"></div>
-      </div>
       <div class="col-sm-6">
         <div id="map"></div>
       </div>
     </div>
+
 
     <div class="footer">
       <p>&copy; 2014 Zombie Paul Morphy</p>
@@ -86,6 +106,22 @@
   <!-- build:js({.tmp,app}) scripts/main.js -->
   <script src="scripts/main.js"></script>
   <script src="scripts/templates.js"></script>
+  <script src="scripts/models/Country.js"></script>
+  <script src="scripts/collections/Countries.js"></script>
+  <script src="scripts/collections/countries.js"></script>
+  <script src="scripts/views/SearchView.js"></script>
+  <script src="scripts/views/CountriesView.js"></script>
+  <script src="scripts/views/CountryView.js"></script>
+  <script src="scripts/views/CountryDetailView.js"></script>
   <!-- endbuild -->
+
+  <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+  <script type="text/javascript">
+    $(function(){
+    new SearchView({el: ".country-search"});
+    });
+  </script>
+
 </body>
 </html>

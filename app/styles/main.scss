@@ -28,6 +28,7 @@ img {
 .header,
 .marketing,
 .footer {
+    margin-top: 15px;
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -97,4 +98,94 @@ img {
     .jumbotron {
         border-bottom: 0;
     }
+}
+
+.property-card {
+  margin: 4px;
+}
+
+.property-card span {
+  display: inline-block;
+  width: 200px;
+  text-align: right;
+  font-size: 1.6em;
+  margin-right: 10px;
+}
+
+#details {
+  margin-top: 30px;
+}
+
+#details ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+#details ul li span.details-value {
+  font-weight: bold;
+  margin: 10px;
+}
+
+.country-search input.input-lg {
+  font-size: 1.6em;
+}
+
+.country-search button.btn {
+  padding: 6px 28px;
+  font-size: 1.6em;
+}
+
+#map {
+  width: 314px;
+  height: 350px;
+  background-image: url("/images/zombie-paul-morphy.jpg");
+}
+
+#map h4 {
+  text-align: center;
+  font-weight: bold;
+  color: #aaa;
+  font-size: 2.1em;
+  margin-top: 150px;
+}
+
+.country-card {
+  border: solid 1px #ccc;
+  margin: 8px 0 8px 0;
+  background-color: white;
+}
+
+.country-card SPAN {
+  display: inline-block;
+}
+
+.country-card .code {
+  width: 58px;
+  font-size: 1.4em;
+  text-align: center;
+  padding: 7px;
+  background-color: #eee;
+  margin: 5px;
+  vertical-align: top;
+}
+
+.country-card .details {
+}
+
+.country-card .details SPAN {
+  display: block;
+  width: 192px;
+  font-style: italic;
+  font-size: .8em;
+}
+
+.country-card .details SPAN.name {
+  font-weight: bold;
+  font-size: 1.2em;
+  font-style: normal;
+}
+
+.country-card .map-it-button {
+  vertical-align: top;
+  margin: 5px 0 4px 0;
 }
