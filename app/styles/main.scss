@@ -13,6 +13,15 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 body {
     padding-top: 20px;
     padding-bottom: 20px;
+    background-image: url('/images/debut_dark.png');
+}
+
+button {
+  margin: 10px 0px;
+}
+
+img {
+  margin-bottom: 10px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
