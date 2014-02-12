@@ -17,28 +17,6 @@
   <script src="bower_components/modernizr/modernizr.js"></script>
   <!-- endbuild -->
 
-  <script type="text/template" id="search">
-    <div class="col-lg-9">
-      <input type="text" class="input-lg form-control country-name" placeholder="Search for a Country...">
-    </div>
-    <div class="col-lg-3">
-      <button class="btn btn-primary country-search-button">Search</button>
-    </div>
-  </script>
-
-  <script type="text/template" id="country">
-    <div class="country-card" data-id="<%= alpha2Code %>">
-      <span class="code"><span><%= alpha3Code %></span></span>
-      <span class="details">
-        <span class="name"><%= name %></span>
-        <span>Currency: <%= currency %></span>
-        <span>Population: <%= population %></span>
-        <span>Languages: <%= languages %></span>
-      </span>
-      <span class="map-it-button"><button class="btn btn-xs btn-info map-it" data-id="<%= alpha2Code %>">Map It</button></span>
-    </div>
-  </script>
-
 </head>
 <body>
   <!--[if lt IE 10]>
@@ -51,8 +29,8 @@
       <h3 class="text-muted">Where should Zombie Paul Morphy play chess?</h3>
     </div>
 
-    <div class="row controls country-search">
-      <div class="col-sm-6">
+    <div class="row controls">
+      <div class="col-sm-6 country-search">
         <div class="row">
           <div class="col-sm-12">
             <input type="text" class="input-lg form-control country-name" placeholder="Search for a Country...">
@@ -119,7 +97,7 @@
 
   <script type="text/javascript">
     $(function(){
-    new SearchView({el: ".country-search"});
+      new SearchView({el: ".country-search"});
     });
   </script>
 

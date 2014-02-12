@@ -1,3 +1,7 @@
+/* exported CountriesView */
+/* global CountryView */
+'use strict';
+
 var CountriesView = Backbone.View.extend({
   el: '#list-of-countries',
 

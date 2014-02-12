@@ -1,5 +1,10 @@
+/* exported CountryView */
+/* global CountryDetailView */
+/* global JST */
+'use strict';
+
 var CountryView = Backbone.View.extend({
-  template: _.template($('#country').html()),
+  template: JST['app/scripts/templates/CountriesView.ejs'],
 
   initialize: function() {
     _.bindAll(this, 'render');
@@ -10,12 +15,12 @@ var CountryView = Backbone.View.extend({
   },
 
   render: function() {
-    html = this.template(this.model.toJSON());
+    var html = this.template(this.model.toJSON());
     this.$el.append(html);
     return this;
   },
 
-  map: function(e) {
+  map: function() {
     new CountryDetailView({model: this.model}).render();
   }
 });

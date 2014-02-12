@@ -1,3 +1,7 @@
+/* exported Countries */
+/* global Country */
+'use strict';
+
 var Countries = Backbone.Collection.extend({
   model: Country,
 

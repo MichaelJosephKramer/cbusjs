@@ -1,5 +1,10 @@
+/* exported SearchView */
+/* global CountriesView */
+/* global Countries */
+
+'use strict';
+
 var SearchView = Backbone.View.extend({
-  template: _.template($('#search').html()),
 
   initialize: function() {
     this.collection = new Countries();
@@ -11,7 +16,7 @@ var SearchView = Backbone.View.extend({
   },
 
   render: function() {
-    view = new CountriesView({collection: this.collection});
+    var view = new CountriesView({collection: this.collection});
     view.render();
     return this;
   },
@@ -21,4 +26,5 @@ var SearchView = Backbone.View.extend({
     this.collection.constructQuery(query);
     this.collection.fetch({reset: true});
   }
+
 });
