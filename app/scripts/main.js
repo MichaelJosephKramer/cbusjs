@@ -8,7 +8,6 @@ window.cbusjs = {
     Routers: {},
     init: function () {
         'use strict';
-        console.log('Hello from Backbone!');
     }
 };
 

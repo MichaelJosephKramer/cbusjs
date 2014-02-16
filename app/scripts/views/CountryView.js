@@ -21,7 +21,7 @@ var CountryView = Backbone.View.extend({
   },
 
   map: function() {
-    new CountryDetailView({model: this.model}).render();
+    new CountryDetailView({model: this.model, el: '#map'}).render();
   }
 });
 

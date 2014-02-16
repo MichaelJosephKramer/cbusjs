@@ -134,7 +134,11 @@ module.exports = function (grunt) {
         },
         jasmine: {
             all:{
-                src : '/scripts/{,*/}*.js',
+                src : [
+                  '<%= yeoman.app %>/scripts/models/*.js',
+                  '<%= yeoman.app %>/scripts/collections/*.js',
+                  '<%= yeoman.app %>/scripts/{,*/}*.js'
+                ],
                 options: {
                     keepRunner: true,
                     specs : 'test/spec/**/*.js',
@@ -143,6 +147,9 @@ module.exports = function (grunt) {
                         '<%= yeoman.app %>/bower_components/underscore/underscore.js',
                         '<%= yeoman.app %>/bower_components/backbone/backbone.js',
                         '.tmp/scripts/templates.js'
+                    ],
+                    helpers : [
+                      'test/bower_components/jasmine-given/index.js'
                     ]
                 }
             }
