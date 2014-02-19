@@ -4,14 +4,22 @@
 describe('Olympics, without straight-up spies', function() {
   var subject;
 
+  // global arrange
   beforeEach(function() {
     subject = new Olympics();
   });
 
   describe('shipToSochi', function() {
+    // "it" is a dumping ground
     it('should ship to Sochi', function() {
+
+      // arrange - basic spy
       spyOn(ShippingService.Sochi, 'toAll');
+
+      // act
       subject.shipToSochi();
+
+      // assert
       expect(ShippingService.Sochi.toAll).toHaveBeenCalled();
     });
   });
@@ -41,8 +49,10 @@ describe('Olympics, with a hand-crafted object', function() {
   beforeEach(function() {
     subject = new Olympics();
 
+    // deal with a global somethingorother
     window.ShippingService = {
       Sochi: {
+        // handle to the spy, spyOn syntax isn't necessary
         toIceRink: jasmine.createSpy(),
         toAll: jasmine.createSpy()
       },
@@ -52,6 +62,7 @@ describe('Olympics, with a hand-crafted object', function() {
     };
   });
 
+  // slightly drier tests
   describe('shipToSochi', function() {
     it('should ship to Sochi', function() {
       subject.shipToSochi();
